@@ -35,13 +35,13 @@ module.exports = class ProductController {
         res.render('products/product', { product })
     }
 
-    /*static async removeProduct(req, res) {
+    static async removeProduct(req, res) {
         const id = req.params.id
         
-        await Product.removeProductById(id)
+        await Product.deleteOne({ _id: id })
 
         res.redirect('/products')
-    }*/
+    }
 
     static async editProduct(req, res) {
         const id = req.params.id
