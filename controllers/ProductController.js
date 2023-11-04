@@ -4,10 +4,10 @@ const Product = require('../models/Product')
 
 //Estou importando essa minha classe productcontroller, com um método estático inerente a ela.
 module.exports = class ProductController {
-    /*static async showProducts(req, res) {
-        const products = await Product.getProducts()
+    static async showProducts(req, res) {
+        const products = await Product.find().lean()
         res.render('products/all', { products })
-    }*/
+    }
 
     static createProduct(req, res) {
         res.render('products/create')
